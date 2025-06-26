@@ -98,16 +98,27 @@ public static class ScriptableGeneratorUtility
         Debug.Log($"[Generator] 생성됨: {path}");
     }
 
-    private static bool NotScriptable(ScriptableStatType statType) =>
-        statType == ScriptableStatType.DiceStat || statType == ScriptableStatType.NecklaceEffectStat || statType == ScriptableStatType.RingElementalEffectStat;
+    private static bool NotScriptable(ScriptableStatType statType)
+    {
+        return true; //
+        //return statType == ScriptableStatType.DiceStat || statType == ScriptableStatType.NecklaceEffectStat || statType == ScriptableStatType.RingElementalEffectStat;
+    }
 
-    private static bool IsOneStat(ScriptableStatType statType) =>
-        statType == ScriptableStatType.AdvancementStat || statType == ScriptableStatType.AwakeningTierStat || statType == ScriptableStatType.GrimoireStat || statType == ScriptableStatType.VIPStat;
+    private static bool IsOneStat(ScriptableStatType statType)
+    {
+        return true; //
+        //return statType == ScriptableStatType.AdvancementStat || statType == ScriptableStatType.AwakeningTierStat || statType == ScriptableStatType.GrimoireStat || statType == ScriptableStatType.VIPStat;
+    }
 
     private static readonly Dictionary<ScriptableStatType, Type> specialTypeOverrides = new()
     {
-        { ScriptableStatType.AbilityStat, typeof(TrainingStatScriptable) },
-        { ScriptableStatType.AwakeningStat, typeof(TrainingStatScriptable) },
-        { ScriptableStatType.TrainingStat, typeof(TrainingStatScriptable) },
+        //{ ScriptableStatType.AbilityStat, typeof(TrainingStatScriptable) },
+        //{ ScriptableStatType.AwakeningStat, typeof(TrainingStatScriptable) },
+        //{ ScriptableStatType.TrainingStat, typeof(TrainingStatScriptable) },
     };
+}
+
+public enum ScriptableStatType
+{
+    None
 }
